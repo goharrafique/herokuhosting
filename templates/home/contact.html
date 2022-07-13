@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+{% block title %}contact{% endblock title %}contact
+{% block body %}
+
+<div class="container">
+<h1 class='ml-461px' >Contact icoder Admin</h1>
+
+<form  method='post' action='/contact' >
+  {% csrf_token %}
+    <div class="row mb-3">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input name='email' type="email" class="form-control" id="email">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="name" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input name='name' type="text" class="form-control" id="name">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="content" class="col-sm-2 col-form-label">Tell Us</label>
+      <div class="col-sm-10">
+      
+        <textarea name="content" id="content" class="form-control" cols="30" rows="10"></textarea>
+      </div>
+    </div>
+   
+      
+  
+    <button type="submit" class="btn btn-primary"> Submit</button>
+  </form>
+  
+</div>
+{% endblock body %}
