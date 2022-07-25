@@ -3,6 +3,7 @@ from home.models import Contact
 from django.contrib import messages
 from blog.models import Post
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def home(request):
     return render(request, 'home/home.html')
@@ -68,3 +69,26 @@ def handleSign(request):
        return redirect('/')
     else:
         return HttpResponse("404- Not Found")
+    
+def handleLogin(request):
+    if request.method=="POST":
+        loginuser=request.POST['loguser']
+        loginpass=request.POST['Logpass']
+        user=authenticate(username=loginuser,password=loginpass)
+        if user is not None:
+            login(request, user)
+            messages.success(request, "successfully login")
+            return redirect('home')
+        else:
+            messages.error(request,'invalid credentials')
+            return redirect('home')
+    return HttpResponse('heloo login')
+def handleLogout(request):
+    
+    logout(request)
+    messages.success(request, 'successfully logout')
+    return redirect('home')
+    return HttpResponse('heloo login')
+
+
+#fetch top post on home on the basis of number of views

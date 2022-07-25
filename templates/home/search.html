@@ -1,12 +1,15 @@
 {% extends 'home/base.html' %} {% block title %} BlogHome {% endblock title %}
 {% block blogactive %} active {% endblock blogactive %} {% block body %}
 <div class="container">
-  <h2>Search results</h2>
-  {% if allPost|length < 1 %}
-  <p>no search results found</p>
-  Your search - <br />{{query}} <br />
-  Did not match {% endif %} {% for post in allPost %}
 
+<h2>Search results</h2>
+{% if allPost|length < 1 %}
+<p>no search results found</p>
+Your search - <br />{{query}} <br />
+Did not match {% endif %}
+</div>
+{% for post in allPost %}
+<div class="container">
   <div
     class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative"
   >
