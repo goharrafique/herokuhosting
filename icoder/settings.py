@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vscst4f(-nt+=g+0f(x%vb#tp!7u7x!9nwj^!5olxctk#+kws5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://icoder-my.herokuapp.com/" ]
 
 
 # Application definition
